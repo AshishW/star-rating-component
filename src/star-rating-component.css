@@ -8,9 +8,10 @@
 }
 
 .star.active{
-    background-color: rgb(255, 186, 97);
+    color: rgb(255, 186, 97);
+    background-color: rgb(55, 60, 144);
 }
 
 .inactive:hover{
-    background-color: rgb(255, 186, 97);
+    color: rgb(255, 186, 97);
 }

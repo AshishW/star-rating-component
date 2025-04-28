@@ -18,7 +18,8 @@ import { useEffect, useState } from "react"
 import './star-rating-component.css'
 
 const StarRating = () =>{
-  const [currRating, setCurrRating] = useState(0)
+  const [currRating, setCurrRating] = useState(0);
+  const [hoveredRating, setHoveredRating] = useState(0);
 
   const maxRating = 5
   
@@ -29,14 +30,19 @@ const StarRating = () =>{
         setCurrRating(ratingValue)
     }
   }
+
+
   return (
     <div className = 'star-rating-container'>
     {
       [...Array(5)].map((_,idx)=>{
         const ratingValue = idx + 1 
-        return <p className={ratingValue <= currRating? 'active': ''}
+        return <p className={`star ${ratingValue <= (hoveredRating || currRating)? 'active': ''}`}
             key={idx} 
-            onClick = {()=>handleClick(ratingValue)}>
+            onClick = {()=>handleClick(ratingValue)}
+            onMouseEnter={()=>setHoveredRating(ratingValue)}
+            onMouseLeave={()=>setHoveredRating(0)}
+            >
                 {ratingValue}
             </p>
       })

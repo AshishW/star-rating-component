@@ -1,13 +1,16 @@
 .star-rating-container{
     display: flex;
 }
-.star-rating-container p{
+.star{
     padding: 5px 5px;
     border: 2px solid black;
     cursor: pointer;
 }
 
-.active{
+.star.active{
     background-color: rgb(255, 186, 97);
 }
 
+.inactive:hover{
+    background-color: rgb(255, 186, 97);
+}
